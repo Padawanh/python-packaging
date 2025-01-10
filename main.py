@@ -1,10 +1,9 @@
 from animals import mammals
 from animals.birds import Bird
-from animals.birds import Aquatic_Bird
 
 Lion = mammals.Mammal('Lion', False)
 
-Lion.transit()
+Lion.moviment()
 print(Lion.get_attributes())
 print("Add atributes")
 Lion.set_attributes(200, 2)
@@ -13,13 +12,15 @@ Lion.escale('tree')
 
 human = mammals.Mammal.make_humam()
 print(human.get_attributes())
-human.transit()
+human.moviment()
 human.escale('tree')
 
 bird = Bird('Eagle', True)
-bird.transit()
+bird.moviment()
 print(bird.get_attributes())
 
+from animals.birds.AquaticBird import Aquatic_Bird
 duck = Aquatic_Bird('Duck', True)
-duck.transit()
+duck.moviment()
 print(duck.get_attributes())
+duck.walk()
