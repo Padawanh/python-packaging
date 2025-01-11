@@ -1,7 +1,7 @@
 class Calculator:
     @staticmethod
     def calculate_square_area(side):
-        return side **2
+        return side**2
 
     @staticmethod
     def calculate_triangle_area(base, height):
