@@ -1,5 +1,6 @@
 from animals import Animals
 
+
 class Bird(Animals):
     def __init__(self, name, can_fly):
         super().__init__(name)
@@ -15,6 +16,10 @@ class Bird(Animals):
             'height': self.height,
             'can_fly': self.can_fly
         }
+
+    def print_atributes(self):
+        for keys, values in self.get_attributes().items():
+            print(f'{keys} : {values}')
 
     def moviment(self):
         if self.can_fly:

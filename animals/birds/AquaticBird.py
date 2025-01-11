@@ -1,5 +1,6 @@
 from animals.birds import Bird
 
+
 class Aquatic_Bird(Bird):
     """
     A class to represent an aquatic bird.
@@ -27,8 +28,8 @@ class Aquatic_Bird(Bird):
         Determines if the bird can fly or walk and prints the appropriate message.
     status() -> None:
         Prints the current status of the bird (flying, swimming, or walking).
-    """ 
-        
+    """
+
     def __init__(self, name: str, can_fly: bool) -> None:
         super().__init__(name, can_fly)
         self.can_fly = can_fly
@@ -43,7 +44,8 @@ class Aquatic_Bird(Bird):
             'height': self.height,
             'can_fly': self.can_fly
         }
-    def fly(self)-> None:
+
+    def fly(self) -> None:
         if self.can_fly:
             self._flaing = True
             self._wainting = False
@@ -53,9 +55,8 @@ class Aquatic_Bird(Bird):
             self._wainting = False
             print(f"I cannot fly.")
             return self.walk()
-        
 
-    def swim(self)-> None:
+    def swim(self) -> None:
         if self._environment == 'water':
             self._swimming = True
             self._status = 'swimming'
@@ -64,21 +65,21 @@ class Aquatic_Bird(Bird):
             if self._environment == 'ground':
                 self.walk()
                 return print(f"The {self.name} It's in the wrong environment")
-    
-    def walk(self)-> None:
+
+    def walk(self) -> None:
         self._walking = True
         self._wainting = False
         self._status = 'walking'
         self._environment = 'ground'
         return print(f"The {self.name} It's walking")
-        
-    def moviment(self)-> None:
+
+    def moviment(self) -> None:
         if self._environment == 'water':
             return self.swim()
         elif self._environment == 'ground':
             return self.walk()
         else:
             return self.fly()
-    
-    def status(self)-> None:
-        return print(f"The {self.name} It's {self._status}")
+
+    def status(self) -> None:
+        return print(f"The {self.name} It's {self._status} in the {self._environment}")

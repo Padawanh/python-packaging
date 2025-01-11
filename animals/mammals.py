@@ -14,23 +14,23 @@ class Mammal(Animals):
             'height': self.height,
             'can_fly': self.can_escale
         }
-    
-    def escale(self,target):
+
+    def escale(self, target):
         if self.can_escale:
             self._scaling = True
             return print(f"The {self.name} is scaling a {target}")
         else:
             return print(f'The {self.name} cannot scaling a {target}')
-        
+
     def moviment(self):
         return print(f"The {self.name} It's running")
-    
-    # O decorador @classmethod é usado para definir um método de classe. 
-    # Um método de classe recebe a própria classe como primeiro argumento, 
-    # geralmente chamado de 'cls'. Isso permite que o método acesse e modifique 
+
+    # O decorador @classmethod é usado para definir um método de classe.
+    # Um método de classe recebe a própria classe como primeiro argumento,
+    # geralmente chamado de 'cls'. Isso permite que o método acesse e modifique
     # o estado da classe, ao invés de instâncias individuais da classe.
     @classmethod
     def make_humam(cls):
         human = cls('Human', True)
-        human.set_attributes( 70, 1.70)
+        human.set_attributes(70, 1.70)
         return human

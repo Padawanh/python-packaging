@@ -1,6 +1,7 @@
 
 from abc import ABC, abstractmethod
 
+
 class Animals(ABC):
     def __init__(self, name):
         # print('Animals class created')
@@ -9,15 +10,13 @@ class Animals(ABC):
         self.height = None
         self._wainting = True
 
-        
     def __str__(self):
         return 'This is the Animals class'
-
 
     def set_attributes(self, weight, height):
         self.weight = weight
         self.height = height
-        
+
     '''
     O decorador @abstractmethod é usado em Python para definir métodos abstratos 
     dentro de uma classe base abstrata. Um método abstrato é um método que é 
@@ -27,7 +26,15 @@ class Animals(ABC):
     @abstractmethod
     def moviment(self):
         pass
-    
+
     @abstractmethod
     def get_attributes(self):
         pass
+
+    @abstractmethod
+    def print_atributes(self):
+        pass
+
+    def print_atributes(self):
+        for keys, values in self.get_attributes().items():
+            print(f'{keys} : {values}')
