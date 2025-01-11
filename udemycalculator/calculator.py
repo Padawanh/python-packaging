@@ -1,3 +1,5 @@
+import numpy as np
+print(np.__version__)
 class Calculator:
     @staticmethod
     def calculate_square_area(side):

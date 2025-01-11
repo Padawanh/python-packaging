@@ -7,12 +7,15 @@ def read_file(file_name):
 
 
 setup(
-    name="UdemyCalculator",
+    name="udemycalculator",
     version="1.0.1",
     packages=find_packages(include=['udemyCalculator', 'udemyCalculator.*']),
     url="",
     author="Idan Chen",
     description="This is my udemy calculator package",
     long_description=read_file(file_name="README.md"),
-    python_requires=">=3.6"
+    python_requires=">=3.6",
+    install_requires=[
+        'numpy'
+    ]
 )
